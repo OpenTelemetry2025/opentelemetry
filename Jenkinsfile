@@ -19,4 +19,33 @@ pipeline {
             
     }
 }
+post {
+        always {
+            // This runs regardless of build status
+           slackSend channel: 'rcsprint1', message: 'pipeline triggered successfully'
+        }
+        success {
+            // Runs only when the pipeline succeeds
+            echo 'Pipeline succeeded! Sending success notification'
+                       slackSend channel: 'rcsprint1', message: 'SUCCESS!!!'
+
+        }
+        failure {
+            // Runs only when the pipeline fails
+                     slackSend channel: 'rcsprint1', message: 'Project failed @pallavi IMMEDIATE ACTION REQUIRED!!!'
+
+        }
+        unstable {
+            // Runs when the pipeline is marked as unstable
+            echo 'Pipeline is unstable! Sending notification'
+        }
+        changed {
+            // Runs when the pipeline status changes (e.g., from failure to success)
+            echo 'Pipeline status changed! Sending notification'
+        }
+    }
+
+
+
+    
 }
