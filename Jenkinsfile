@@ -16,7 +16,8 @@ pipeline {
         stage("buildnew")
         {
             steps{
-           sh '''./src/ad/gradlew installDist'''
+                sh '''cd ./src/ad'''
+           sh '''./gradlew installDist'''
             }
     }
     }
