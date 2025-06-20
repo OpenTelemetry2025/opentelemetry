@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+        gradle 'gradle'
+    }
 
     stages {
         stage('checkout_sc') {
@@ -12,9 +15,7 @@ pipeline {
         }
         stage("buildnew")
         {
-            steps {
-            sh 'echo "hello world" ' 
-            }
+           sh '''./src/ad/gradlew installDist'''
             
     }
 }
