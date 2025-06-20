@@ -15,10 +15,11 @@ pipeline {
         }
         stage("buildnew")
         {
+            steps{
            sh '''./src/ad/gradlew installDist'''
-            
+            }
     }
-}
+    }
 post {
         always {
             // This runs regardless of build status
