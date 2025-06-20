@@ -10,7 +10,7 @@ pipeline {
            1) source code pulled successfully''', cc: '', from: '', replyTo: '', subject: 'source code pulled successfully', to: 'projects2488@gmail.com'
             }
         }
-        stage("build")
+        stage("buildnew")
         {
             steps {
             //comment
