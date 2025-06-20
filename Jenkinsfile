@@ -13,7 +13,7 @@ pipeline {
         stage("buildnew")
         {
             steps {
-            //comment
+            sh 'echo "hello world" ' 
             }
             
     }
